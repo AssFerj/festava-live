@@ -44,6 +44,12 @@ export const PricingPrice = styled.div`
     color: ${({ theme }) => theme.colors.dark};
     margin-left: 5px;
   }
+
+  @media (max-width: 991.98px) {
+    h2 {
+      font-size: 2.5rem;
+    }
+  }
 `;
 
 export const PricingBody = styled.div`

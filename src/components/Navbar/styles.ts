@@ -4,22 +4,10 @@ import styled from 'styled-components';
 import Link from 'next/link';
 
 export const Nav = styled.nav`
-  background: transparent;
-  z-index: 9;
-  position: absolute;
-  top: 51px; /* From .site-header height */
-  right: 0;
-  left: 0;
-  transition: all 0.3s;
-
-  &.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: ${({ theme }) => theme.colors.dark};
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
-    margin-top: 0;
-  }
+  background-color: transparent !important;
+  /* The navbar is now part of the normal page flow and will scroll with it. */
+  width: 100%;
+  z-index: 999;
 `;
 
 export const Brand = styled(Link)`
@@ -48,7 +36,7 @@ export const NavLink = styled(Link)<{ $isActive?: boolean }>`
   transition: color 0.3s;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.primary} !important;
   }
 
   &:visited {

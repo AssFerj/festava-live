@@ -4,9 +4,15 @@ import styled from 'styled-components';
 
 export const HeroSection = styled.section`
   padding-top: 120px; /* Ajuste para evitar sobreposição da Navbar */
+  margin-top: -83px;
   position: relative;
   height: 100vh;
   overflow: hidden;
+
+  @media (max-width: 991.98px) {
+    padding-top: 80px;
+    margin-top: -62px;
+  }
 `;
 
 export const SectionOverlay = styled.div`
