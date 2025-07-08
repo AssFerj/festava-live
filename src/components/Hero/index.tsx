@@ -12,6 +12,7 @@ import {
   InfoText,
   SocialIcons,
 } from './styles';
+import { FaFacebook, FaTwitter, FaInstagram, FaClock, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Hero: React.FC = () => {
   return (
@@ -33,13 +34,13 @@ const Hero: React.FC = () => {
           <div className="col-lg-12 col-12 mt-auto d-flex flex-column flex-lg-row text-center">
             <div className="date-wrap">
               <InfoText>
-                <i className="custom-icon bi-clock me-2"></i>
+                <FaClock className="me-2" />
                 10 - 12 de Dezembro, 2023
               </InfoText>
             </div>
             <div className="location-wrap mx-auto py-3 py-lg-0">
               <InfoText>
-                <i className="custom-icon bi-geo-alt me-2"></i>
+                <FaMapMarkerAlt className="me-2" />
                 Centro Nacional, Estados Unidos
               </InfoText>
             </div>
@@ -48,17 +49,17 @@ const Hero: React.FC = () => {
                 <span className="text-white me-3">Compartilhe:</span>
                 <li className="social-icon-item">
                   <a href="#" className="social-icon-link">
-                    <span className="bi-facebook"></span>
+                    <FaFacebook size={24} />
                   </a>
                 </li>
                 <li className="social-icon-item">
                   <a href="#" className="social-icon-link">
-                    <span className="bi-twitter"></span>
+                    <FaTwitter size={24} />
                   </a>
                 </li>
                 <li className="social-icon-item">
                   <a href="#" className="social-icon-link">
-                    <span className="bi-instagram"></span>
+                    <FaInstagram size={24} />
                   </a>
                 </li>
               </SocialIcons>

@@ -3,6 +3,7 @@
 import styled from 'styled-components';
 
 export const HeroSection = styled.section`
+  padding-top: 120px; /* Ajuste para evitar sobreposição da Navbar */
   position: relative;
   height: 100vh;
   overflow: hidden;

@@ -83,6 +83,12 @@ const scheduleData = [
   },
 ];
 
+const dayLabels: { [key: string]: string } = {
+  wednesday: 'Quarta-feira',
+  thursday: 'Quinta-feira',
+  friday: 'Sexta-feira',
+};
+
 const Schedule: React.FC = () => {
   return (
     <ScheduleSection id="section_4">
@@ -104,11 +110,11 @@ const Schedule: React.FC = () => {
               <TableBody>
                 {scheduleData.map((schedule, index) => (
                   <TableRow key={index}>
-                    <TableCell $isDate>{schedule.day}</TableCell>
+                    <TableCell $isDate data-label="Data">{schedule.day}</TableCell>
                     {['wednesday', 'thursday', 'friday'].map((dayKey) => {
                       const event = schedule.events[dayKey as keyof typeof schedule.events];
                       return (
-                        <TableCell key={dayKey}>
+                        <TableCell key={dayKey} data-label={dayLabels[dayKey]}>
                           {event ? (
                             <ScheduleThumb>
                               <ScheduleInfo>

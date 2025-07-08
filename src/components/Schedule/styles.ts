@@ -30,6 +30,10 @@ export const ScheduleTable = styled.table`
 export const TableHeader = styled.thead`
   background-color: ${({ theme }) => theme.colors.secondary};
   color: ${({ theme }) => theme.colors.white};
+
+  @media (max-width: 767.98px) {
+    display: none;
+  }
 `;
 
 export const TableHeading = styled.th`
@@ -44,9 +48,51 @@ export const TableRow = styled.tr`
   &:nth-child(even) {
     background-color: ${({ theme }) => theme.colors.primary};
   }
+
+  @media (max-width: 767.98px) {
+    display: block;
+    margin-bottom: 20px;
+    border: 1px solid ${({ theme }) => theme.colors.borderColor};
+    border-radius: ${({ theme }) => theme.radii.medium};
+    overflow: hidden;
+  }
 `;
 
 export const TableCell = styled.td<{
+  $isDate?: boolean;
+}>`
+  padding: 20px;
+  border: 1px solid ${({ theme }) => theme.colors.borderColor};
+  vertical-align: top;
+  font-weight: ${({ $isDate, theme }) =>
+    $isDate ? theme.fontWeights.bold : 'normal'};
+
+  @media (max-width: 767.98px) {
+    display: block;
+    border: none;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.borderColor};
+    padding-left: 120px; /* Ajustado para evitar quebra de layout */
+    position: relative;
+    text-align: right;
+
+    &::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: ${({ theme }) => theme.fontWeights.bold};
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+`;
+
+export const HiddenTableCell = styled.td<{
   $isDate?: boolean;
 }>`
   padding: 20px;

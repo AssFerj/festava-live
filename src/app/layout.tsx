@@ -8,6 +8,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import './globals.css';
 import { Banner } from '@/components/Banner';
+import GlobalStyle from '@/styles/GlobalStyles';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <StyledComponentsRegistry>
           <Providers>
+            <GlobalStyle />
             <Header />
             <Navbar />
             <main>{children}</main>
